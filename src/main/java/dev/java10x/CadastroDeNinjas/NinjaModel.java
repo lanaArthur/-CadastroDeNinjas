@@ -13,6 +13,14 @@ public class NinjaModel {
     private String email;
     private int idade;
 
+    private List<MissoesModel> missoes;
+
+    //UM NINJA TEM 1 UNICA MISSÃO
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")//forenig key chave estranjeira
+
+    private NinjaModel missoes;
+
 
     public NinjaModel() {}
 
