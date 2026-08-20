@@ -1,33 +1,34 @@
-package dev.java10x.CadastroDeNinjas;
+package dev.java10x.CadastroDeNinjas.Ninjas;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cadastro")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     @Column(unique = true)
     private String email;
-    private int idade;
 
-    private List<MissoesModel> missoes;
+    private int idade;
 
     //UM NINJA TEM 1 UNICA MISSÃO
     @ManyToOne
     @JoinColumn(name = "missoes_id")//forenig key chave estranjeira
+    //chave estrangeira
+    private MissoesModel missoes;
 
-    private NinjaModel missoes;
 
-
-    public NinjaModel() {}
-
-    public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
 }
