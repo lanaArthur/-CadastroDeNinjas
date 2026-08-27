@@ -22,12 +22,44 @@ public class NinjaController {
     @DeleteMapping
 */
 
-    public String boasVindas(){
+    public String boasvindas() {
         return "Essa é minha primeira mensagem nessa rota.";
     }
 
+    //ADICIONAR NINJA(CREATE)
+    @GetMapping("/criar")
+    public String criarNinja() {
+        return "Ninja Criado.";
+    }
+
+    //PROUCURAR NINJA (CREATE)
 
 
+    //ALTERAR DADOS DO NINJA (UPDATE)
+    @PutMapping("/alterarID")
+    public String alterarID() {
+        return "Alter ninja por ID.";
+    }
+
+
+    //MOSTRAR TODOS OS NINJAS (READ)
+    @GetMapping("/todos")
+    public String mostrarTodosOsNinjas() {
+        return "Ninja mostra todos os ninjas.";
+    }
+
+    //MOSTRAR TODOS OS NINJAS (READ)
+    @GetMapping("/litarID")
+    public String mostrarTodosOsNinjasPorID() {
+        return "Mostrar Ninja por ID.";
+    }
+
+
+    //DELETAR NINJA (DELETE)
+    @DeleteMapping("deletarID")
+    public String deletarNinja() {
+        return "Deleta ninja por ID.";
+    }
 
 
 }
